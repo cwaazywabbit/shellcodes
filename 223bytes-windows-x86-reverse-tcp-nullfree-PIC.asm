@@ -155,7 +155,7 @@ create_sockaddr_in:                 ; we need to prepare sockaddr_in struct for 
 ; EBX = baseaddr of ws2_32.dll
 ; ECX = pointer to sockaddr_in struct on stack
 ; EDX = junk
-; ESI = EIP (address of start_prepare_startupinfoa)
+; ESI = address of start_prepare_startupinfoa
 ; EDI = addr of find_function
 
 start_prepare_startupinfoa:
@@ -176,7 +176,7 @@ call_connect:
 ; EBX = baseaddr of ws2_32.dll
 ; ECX = junk
 ; EDX = 0
-; ESI = EIP (address of create_startupinfoa)
+; ESI = address of create_startupinfoa
 ; EDI = addr of find_function
 
 create_startupinfoa:
@@ -199,7 +199,7 @@ create_startupinfoa:
 ; EBX = baseaddr of ws2_32.dll
 ; ECX = pointer of STARTUPINFOA struct
 ; EDX = 0x00000100
-; ESI = EIP (address of create_startupinfoa)
+; ESI = address of create_startupinfoa
 ; EDI = addr of find_function
 
 create_cmd_string:
@@ -212,7 +212,7 @@ create_cmd_string:
 ; EBX = baseaddr of ws2_32.dll
 ; ECX = pointer of STARTUPINFOA struct
 ; EDX = pointer of "cmd\\0"
-; ESI = EIP (address of create_startupinfoa)
+; ESI = address of create_startupinfoa
 ; EDI = addr of find_function
 
 call_createprocessa:
@@ -232,10 +232,10 @@ call_createprocessa:
   call edi                    ; call find_function
 
 ; EAX = 1
-; EBX = baseaddr of ws2_32.dll
+; EBX = baseaddr of kernel32.dll
 ; ECX = junk
 ; EDX = 0
-; ESI = EIP (address of call_exitprocess)
+; ESI = address of call_exitprocess
 ; EDI = addr of find_function
 
 call_exitprocess:
