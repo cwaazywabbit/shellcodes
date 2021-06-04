@@ -3,7 +3,7 @@
 ; Tested on: Windows 10.0.16299 (x86)
 ; Version: 1.0 (06 June 2021)
 ;-------------------------------------------------------------------------------------------;
-; Characteristics: 225 bytes, Position-Independent-Code (PIC), NULL-free, Reverse TCP shell
+; Characteristics: 223 bytes, Position-Independent-Code (PIC), NULL-free, Reverse TCP shell
 ; Bonus: keeps track of EIP after each call to find_function
 ;-------------------------------------------------------------------------------------------;
 ; Assumptions: ws2_32.dll is already loaded and win sockets are initialized
